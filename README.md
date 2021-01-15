@@ -25,13 +25,14 @@ devtools::install_github("emcramer/CHOIRBM")
 
 ## Example
 
-This is a basic example which shows you how to the front part of the
-male CHOIR Body Map:
+This is a basic example which shows you how to plot the front and back
+parts of the male CHOIR Body Map:
 
 ``` r
 library(CHOIRBM)
 
 # generate some random example data
+set.seed(123)
 ids <- as.character(c(seq.int(101, 136, 1), seq.int(201, 238, 1)))
 values <- data.frame(
   id = ids
