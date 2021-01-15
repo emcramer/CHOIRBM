@@ -42,12 +42,13 @@ This is a basic example which shows you how to the front part of the male CHOIR 
 library(CHOIRBM)
 
 # generate some random example data
-ids <- as.factor(as.character(seq.int(101, 136, 1)))
+ids <- as.character(c(seq.int(101, 136, 1), seq.int(201, 238, 1)))
 values <- data.frame(
   id = ids
   , value = runif(length(ids))
+  , group = ifelse(as.numeric(ids) < 200, "Front", "Back")
 )
 
 # plot the data on the front of the CHOIR body map
-plot_male_front_choirbm(values)
+plot_male_choirbm(values)
 ```
