@@ -38,7 +38,7 @@ devtools::install_github("emcramer/CHOIRBM")
 
 This is a basic example which shows you how to the front part of the male CHOIR Body Map:
 
-```{r example}
+```{r example, fig.height=2.5}
 library(CHOIRBM)
 
 # generate some random example data

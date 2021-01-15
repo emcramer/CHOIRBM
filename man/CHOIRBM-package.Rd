@@ -8,6 +8,14 @@
 \description{
 Colleciton of utility functions for visualizing data collected with the Collaborative Health Outcomes Information Registry.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/emcramer/CHOIRBM}
+  \item Report bugs at \url{https://github.com/emcramer/CHOIRBM/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Eric Cramer \email{emcramer@stanford.edu} (\href{https://orcid.org/0000-0003-2085-3679}{ORCID})
 
