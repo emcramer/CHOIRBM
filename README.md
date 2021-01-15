@@ -10,8 +10,8 @@ The goal of CHOIRBM is to …
 
 ## Installation
 
-You can install the released version of CHOIRBM from
-[CRAN](https://CRAN.R-project.org) with:
+~~You can install the released version of CHOIRBM from
+[CRAN](https://CRAN.R-project.org) with:~~ (Not on CRAN…yet)
 
 ``` r
 install.packages("CHOIRBM")
