@@ -10,7 +10,6 @@
 plot_male_choirbm <- function(df){
   positions <- rbind(male_front_poly_coords_df, male_back_poly_coords_df)
   datapoly <- merge(df, positions, by = "id")
-  print(datapoly)
   p <- ggplot2::ggplot(datapoly) +
     ggplot2::aes(x = x, y = y) +
     ggplot2::geom_polygon(ggplot2::aes(fill = value, group = id), color = "black", size = 1.5) +
