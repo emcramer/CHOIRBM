@@ -4,16 +4,19 @@
 \alias{plot_male_choirbm}
 \title{Plot the male CHOIR Body Map}
 \usage{
-plot_male_choirbm(df, face = "f")
+plot_male_choirbm(df, value)
 }
 \arguments{
 \item{df}{data.frame}
 
-\item{face}{character, either 'f' or 'b' indicating front or back}
+\item{value}{string}
 }
 \value{
 ggrob
 }
 \description{
 Creates a new plot of the male CHOIR body map, with the option to sweitch between front and back.
+}
+\examples{
+
 }

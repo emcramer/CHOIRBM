@@ -15,3 +15,6 @@ ggrob
 \description{
 Creates a new plot of the front side of the male CHOIR body map.
 }
+\examples{
+
+}

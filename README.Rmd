@@ -47,9 +47,13 @@ ids <- as.character(c(seq.int(101, 136, 1), seq.int(201, 238, 1)))
 values <- data.frame(
   id = ids
   , value = runif(length(ids))
+  , ucolors = rainbow(length(ids))
   , group = ifelse(as.numeric(ids) < 200, "Front", "Back")
 )
 
 # plot the data on the front of the CHOIR body map
-plot_male_choirbm(values)
+plot_male_choirbm(values, "value")
+
+# plot each segment of the bodymap as a different color
+plot_male_choirbm(values, "ucolors")
 ```

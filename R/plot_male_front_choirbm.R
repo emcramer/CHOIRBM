@@ -7,13 +7,16 @@
 #' @export
 #'
 #' @examples
+#'
+#' @importFrom ggplot2 ggplot aes geom_polygon scale_y_reverse facet_wrap theme_void theme
+#'
 plot_male_front_choirbm <- function(df){
   datapoly <- merge(df, male_front_poly_coords_df, by = c("id"))
-  p <- ggplot2::ggplot(datapoly) +
-    ggplot2::aes(x = x, y = y) +
-    ggplot2::geom_polygon(ggplot2::aes(fill = value, group = id), color = "black", size = 1.5) +
-    ggplot2::scale_y_reverse() +
-    ggplot2::theme_void() +
-    ggplot2::theme(legend.position = "None")
+  p <- ggplot(datapoly) +
+    aes(x = x, y = y) +
+    geom_polygon(aes(fill = value, group = id), color = "black", size = 1.5) +
+    scale_y_reverse() +
+    theme_void() +
+    theme(legend.position = "None")
   return(p)
 }
