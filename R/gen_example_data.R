@@ -8,6 +8,7 @@
 #'
 #' @examples
 #'
+#'
 #' @importFrom stats runif
 gen_example_data <- function(seed = 123){
   ids <- as.character(c(seq.int(101, 136, 1), seq.int(201, 238, 1)))
