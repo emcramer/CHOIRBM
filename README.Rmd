@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of CHOIRBM is to ...
+CHOIRBM is a collection of plotting utilities for the [Collaborative Health Outcomes Information Registry's](http://www.choir.stanford.edu) Body Map (CBM). The CBM is an instrument for assessing the distribution of a patient's pain, and has been validated in a paper published in [_Pain Reports_ (Scherrer et al 2021)](https://doi.org/10.1097/pr9.0000000000000880).
 
 ## Installation
 
@@ -32,13 +32,14 @@ Or install from GitHub with:
 
 ``` r
 devtools::install_github("emcramer/CHOIRBM")
+remotes::install_github("emcramer/CHOIRBM")
 ```
 
 ## Example
 
 This is a basic example which shows you how to plot the front and back parts of the male CHOIR Body Map:
 
-```{r example, fig.height=3}
+```{r male_example, fig.height=3}
 library(CHOIRBM)
 
 # generate some random example data
@@ -57,3 +58,19 @@ plot_male_choirbm(values, "value")
 # plot each segment of the bodymap as a different color
 plot_male_choirbm(values, "ucolors")
 ```
+
+And an additional example with the female CHOIR Body Map:
+
+```{r female_example, fig.height=3}
+library(CHOIRBM)
+
+# generate some random example data
+exdata <- gen_example_data()
+
+# plot the data on the front of the CHOIR body map
+plot_female_choirbm(exdata, "value")
+```
+
+## Citations:
+> Scherrer, Kristen Hymela,b; Ziadni, Maisa S.a; Kong, Jiang-Tia; Sturgeon, John A.c; Salmasi, Vafia; Hong, Juliettea; Cramer, Erica; Chen, Abby L.a; Pacht, Teresaa; Olson, Garricka; Darnall, Beth D.a; Kao, Ming-Chiha; Mackey, Seana,* Development and validation of the Collaborative Health Outcomes Information Registry body map, PAIN Reports: January/February 2021 - Volume 6 - Issue 1 - p e880
+doi: [10.1097/PR9.0000000000000880](https://doi.org/10.1097/pr9.0000000000000880)

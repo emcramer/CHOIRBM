@@ -4,7 +4,10 @@
 \alias{gen_example_data}
 \title{Generate Simple Example Data}
 \usage{
-gen_example_data()
+gen_example_data(seed = 123)
+}
+\arguments{
+\item{seed}{integer to seed the random number generator}
 }
 \value{
 values data.frame
