@@ -4,7 +4,8 @@
 #' data frame with a binary indication of whether or not an ID appeared. Useful for plotting
 #' an individual's CHOIR BM or for isolating particular sections to highlight.
 #'
-#' @param map_str
+#' @param map_str The delimited CBM string.
+#' @param delim The delimiter for the CBM string.
 #'
 #' @return ret_df data.frame with all of the CHOIR BM segment IDs with a 1 if the segment was present and 0 otherwise.
 #' @export
@@ -18,7 +19,7 @@ string_to_map <- function(map_str = "", delim = ",") {
   ret_df <- data.frame(
     id = ids
     , group = ifelse(as.numeric(ids) < 200, "Front", "Back")
-    , value = as.integer(id %in% unlist(str_split(map_str, delim)))
+    , value = as.integer(ids %in% unlist(str_split(map_str, delim)))
   )
   return(ret_df)
 }

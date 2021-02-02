@@ -7,7 +7,9 @@
 string_to_map(map_str = "", delim = ",")
 }
 \arguments{
-\item{map_str}{}
+\item{map_str}{The delimited CBM string.}
+
+\item{delim}{The delimiter for the CBM string.}
 }
 \value{
 ret_df data.frame with all of the CHOIR BM segment IDs with a 1 if the segment was present and 0 otherwise.

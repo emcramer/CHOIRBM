@@ -1,0 +1,37 @@
+---
+title: "Plotting a single patient's CBM"
+author: "Eric Cramer"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{plot-one-patient}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This vignette describes the process of converting a string representation of a CHOIR Body Map (CBM) into a plot.
+
+CBM data for a given patient is often provided in a delimited string similar to this: "101,102,103,104" (these segment identifiers indicate the face and top of the head). If you want to plot the CBM of a single patient (e.g., for a report) or highlight specific segments on a CBM (e.g., in a paper), then you can use the `string_to_map` function to convert this string into an R `data.frame` object ready for the rest of the plotting functions in `CHOIRBM`. Let's take the above string as an example.
+
+## Converting a string map into a CBM-plottable data frame
+Start with the string representation of a patient's CBM. When it is converted to a data frame, the CBM is represented as a series of segment IDs with a group label (indicating if the segment belongs to the front or back of the body map) and a binary value to indicate whether the segment was present in this patient's CBM string.
+
+```{r setup}
+library(CHOIRBM)
+
+cbm_str <- "101,102,103,104"
+cbm_df <- string_to_map(cbm_str)
+head(cbm_df)
+```
+
+The resulting data frame is plot-able:
+
+```{r plot1}
+plot_male_choirbm(cbm_df, "value")
+```

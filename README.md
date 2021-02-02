@@ -11,7 +11,9 @@ Health Outcomes Information Registry’s](http://www.choir.stanford.edu)
 Body Map (CBM). The CBM is an instrument for assessing the distribution
 of a patient’s pain, and has been validated in a paper published in
 [*Pain Reports* (Scherrer et al
-2021)](https://doi.org/10.1097/pr9.0000000000000880).
+2021)](https://doi.org/10.1097/pr9.0000000000000880). The package is
+built on top of the popular R plotting package `ggplot2`, and returns
+plots as ggplot objects.
 
 ![The CHOIR Body
 Map](https://images.journals.lww.com/painrpts/Original.01938936-202102000-00006.F1.jpeg)
@@ -32,7 +34,9 @@ devtools::install_github("emcramer/CHOIRBM")
 remotes::install_github("emcramer/CHOIRBM")
 ```
 
-## Example
+## Examples
+
+### Plotting the Male CBM
 
 This is a basic example which shows you how to plot the front and back
 parts of the male CHOIR Body Map:
@@ -63,6 +67,8 @@ plot_male_choirbm(values, "ucolors")
 
 <img src="man/figures/README-male_example-2.png" width="100%" />
 
+### Plotting the female CBM
+
 And an additional example with the female CHOIR Body Map:
 
 ``` r
@@ -76,6 +82,9 @@ plot_female_choirbm(exdata, "value")
 ```
 
 <img src="man/figures/README-female_example-1.png" width="100%" />
+
+Check the vignettes for more examples such as plotting individual
+patients, highlighting specific segments, and changing color schemes.
 
 ## Citations:
 
