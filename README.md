@@ -15,10 +15,6 @@ of a patient’s pain, and has been validated in a paper published in
 built on top of the popular R plotting package `ggplot2`, and returns
 plots as ggplot objects.
 
-``` r
-knitr::include_graphics("man/figures/cbm-journal.jpeg")
-```
-
 <img src="man/figures/cbm-journal.jpeg" width="100%" />
 
 ## Installation
