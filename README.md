@@ -13,6 +13,9 @@ of a patient’s pain, and has been validated in a paper published in
 [*Pain Reports* (Scherrer et al
 2021)](https://doi.org/10.1097/pr9.0000000000000880).
 
+![The CHOIR Body
+Map](https://images.journals.lww.com/painrpts/Original.01938936-202102000-00006.F1.jpeg)
+
 ## Installation
 
 ~~You can install the released version of CHOIRBM from
