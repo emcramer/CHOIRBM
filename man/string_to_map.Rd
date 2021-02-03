@@ -20,5 +20,9 @@ data frame with a binary indication of whether or not an ID appeared. Useful for
 an individual's CHOIR BM or for isolating particular sections to highlight.
 }
 \examples{
+cbm_str <- "101,102,103,104,201,202"
+cbm_df <- string_to_map(cbm_str)
+#plot in a male or female bodymap...
+plot_male_choirbm(cbm_df, "value")
 
 }

@@ -8,6 +8,8 @@
 #' @export
 #'
 #' @examples
+#' cbm_df <- gen_example_data()
+#' plot_male_choirbm(cbm_df, "value")
 #'
 #' @importFrom ggplot2 ggplot aes geom_polygon scale_y_reverse facet_wrap theme_void theme
 #' @importFrom rlang .data

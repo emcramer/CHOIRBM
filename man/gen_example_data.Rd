@@ -16,5 +16,7 @@ values data.frame
 Creates a data frame with CHOIR Body Map segment IDs and a randomly associated value. Also adds grouping information for facetting while plotting.
 }
 \examples{
+cbm_df <- gen_example_data()
+head(cbm_df)
 
 }

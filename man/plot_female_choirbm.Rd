@@ -18,5 +18,7 @@ ggrob
 Creates a new plot of the front and back of the female CHOIR body map.
 }
 \examples{
+cbm_df <- gen_example_data()
+plot_female_choirbm(cbm_df, "value")
 
 }

@@ -18,5 +18,7 @@ ggrob
 Creates a new plot of the male CHOIR body map, with the option to sweitch between front and back.
 }
 \examples{
+cbm_df <- gen_example_data()
+plot_male_choirbm(cbm_df, "value")
 
 }
