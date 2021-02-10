@@ -13,7 +13,9 @@ gen_example_data(seed = 123)
 values data.frame
 }
 \description{
-Creates a data frame with CHOIR Body Map segment IDs and a randomly associated value. Also adds grouping information for facetting while plotting.
+Creates a data frame with CHOIR Body Map segment IDs and a randomly
+associated value. Also adds grouping information for facetting while
+plotting.
 }
 \examples{
 cbm_df <- gen_example_data()

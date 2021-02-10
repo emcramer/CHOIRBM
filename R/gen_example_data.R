@@ -20,7 +20,14 @@ gen_example_data <- function(seed = 123) {
   values <- data.frame(
     id = ids
     , value = runif(length(ids))
-    , group = ifelse(as.numeric(ids) < 200, "Front", "Back")
+    , group = factor(
+      ifelse(
+        as.numeric(ids) < 200
+        , "Front"
+        , "Back"
+        )
+      , levels = c("Front", "Back")
+      )
   )
   return(values)
 }

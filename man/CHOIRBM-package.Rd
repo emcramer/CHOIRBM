@@ -6,7 +6,9 @@
 \alias{CHOIRBM-package}
 \title{CHOIRBM: Plots the CHOIR Body Map}
 \description{
-Colleciton of utility functions for visualizing data collected with the Collaborative Health Outcomes Information Registry.
+Collection of utility functions for visualizing
+    body map data collected with the Collaborative Health Outcomes
+    Information Registry.
 }
 \seealso{
 Useful links:
