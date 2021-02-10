@@ -88,10 +88,10 @@ patients, highlighting specific segments, and changing color schemes.
 
 ## Citations:
 
-> Scherrer, Kristen Hymela,b; Ziadni, Maisa S.a; Kong, Jiang-Tia;
-> Sturgeon, John A.c; Salmasi, Vafia; Hong, Juliettea; Cramer, Erica;
-> Chen, Abby L.a; Pacht, Teresaa; Olson, Garricka; Darnall, Beth D.a;
-> Kao, Ming-Chiha; Mackey, Seana,\* Development and validation of the
-> Collaborative Health Outcomes Information Registry body map, PAIN
-> Reports: January/February 2021 - Volume 6 - Issue 1 - p e880 doi:
+> Scherrer, Kristen Hymel; Ziadni, Maisa S; Kong, Jiang-Tia; Sturgeon,
+> John A; Salmasi, Vafia; Hong, Juliette; Cramer, Eric; Chen, Abby L;
+> Pacht, Teresa; Olson, Garrick; Darnall, Beth D; Kao, Ming-Chih;
+> Mackey, Sean. Development and validation of the Collaborative Health
+> Outcomes Information Registry body map, PAIN Reports: January/February
+> 2021 - Volume 6 - Issue 1 - p e880 doi:
 > [10.1097/PR9.0000000000000880](https://doi.org/10.1097/pr9.0000000000000880)
