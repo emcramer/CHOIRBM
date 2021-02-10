@@ -1,13 +1,15 @@
 #' Converts a comma-separated string to a CHOIR BM
 #'
-#' Takes a string of IDs that are separated by a comma and converts the information into a
-#' data frame with a binary indication of whether or not an ID appeared. Useful for plotting
-#' an individual's CHOIR BM or for isolating particular sections to highlight.
+#' Takes a string of IDs that are separated by a comma and converts the
+#' information into a data frame with a binary indication of whether or not
+#' an ID appeared. Useful for plotting an individual's CHOIR BM or for
+#' isolating particular sections to highlight.
 #'
 #' @param map_str The delimited CBM string.
 #' @param delim The delimiter for the CBM string.
 #'
-#' @return ret_df data.frame with all of the CHOIR BM segment IDs with a 1 if the segment was present and 0 otherwise.
+#' @return ret_df data.frame with all of the CHOIR BM segment IDs with a 1
+#' if the segment was present and 0 otherwise.
 #' @export
 #'
 #' @examples
