@@ -7,10 +7,10 @@
 <!-- badges: end -->
 
 CHOIRBM is a collection of plotting utilities for the [Collaborative
-Health Outcomes Information Registry’s](https://www.choir.stanford.edu)
-Body Map (CBM). The CBM is an instrument for assessing the distribution
-of a patient’s pain, and has been validated in a paper published in
-[*Pain Reports* (Scherrer et al
+Health Outcomes Information Registry’s](https://choir.stanford.edu) Body
+Map (CBM). The CBM is an instrument for assessing the distribution of a
+patient’s pain, and has been validated in a paper published in [*Pain
+Reports* (Scherrer et al
 2021)](https://doi.org/10.1097/pr9.0000000000000880). The package is
 built on top of the popular R plotting package `ggplot2`, and returns
 plots as ggplot objects.

@@ -1,12 +1,14 @@
 Package: CHOIRBM
 Title: Plots the CHOIR Body Map
-Version: 0.0.1
+Version: 0.0.1.1
 Authors@R: 
-    person(given = "Eric",
-           family = "Cramer",
-           role = c("aut", "cre"),
-           email = "emcramer@stanford.edu",
-           comment = c(ORCID = "0000-0003-2085-3679"))
+    c(person(given = "Eric",
+             family = "Cramer",
+             role = c("aut", "cre"),
+             email = "emcramer@stanford.edu",
+             comment = c(ORCID = "0000-0003-2085-3679")),
+      person(given = "Stanford University School of Medicine",
+             role = c("cph", "fnd")))
 Description: Collection of utility functions for visualizing
     body map data collected with the Collaborative Health Outcomes
     Information Registry.

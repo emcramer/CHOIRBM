@@ -21,5 +21,10 @@ Useful links:
 \author{
 \strong{Maintainer}: Eric Cramer \email{emcramer@stanford.edu} (\href{https://orcid.org/0000-0003-2085-3679}{ORCID})
 
+Other contributors:
+\itemize{
+  \item Stanford University School of Medicine [copyright holder, funder]
+}
+
 }
 \keyword{internal}
