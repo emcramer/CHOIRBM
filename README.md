@@ -7,7 +7,7 @@
 <!-- badges: end -->
 
 CHOIRBM is a collection of plotting utilities for the [Collaborative
-Health Outcomes Information Registry’s](http://www.choir.stanford.edu)
+Health Outcomes Information Registry’s](https://www.choir.stanford.edu)
 Body Map (CBM). The CBM is an instrument for assessing the distribution
 of a patient’s pain, and has been validated in a paper published in
 [*Pain Reports* (Scherrer et al
