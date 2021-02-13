@@ -25,3 +25,5 @@ vignettes/*.pdf
 # custom
 inst/doc
 data-raw/*
+doc
+Meta

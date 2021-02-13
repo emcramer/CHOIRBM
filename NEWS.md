@@ -2,6 +2,8 @@
 
 * Fixed a url in the README which was broken.
 
+---
+
 # CHOIRBM 0.0.1
 
 * Simple functionality for plotting male and female CHOIR Body Maps (CBMs).

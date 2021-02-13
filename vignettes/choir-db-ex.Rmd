@@ -1,0 +1,80 @@
+---
+title: "Processing data from a CHOIR database from start to finish"
+author: "Eric Cramer"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{choir-db-ex}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+```{r setup}
+library(CHOIRBM)
+library(ggplot2)
+```
+
+This vignette describes how to process and visualize data extracted from a CHOIR database and provides an example using the included `validation` dataset. In this example, we will visualize the percent endorsement of each region of the CHOIR Body Map (CBM) for men and women.
+
+First, load the `validation` data into R and get a quick look at it.
+
+```{r load_data}
+# loading the validation data included in the CHOIRBM package
+data(validation)
+head(validation)
+```
+
+You will notice that the CHOIR Body Maps for each patient are comma-separated strings in a single column. Each of these will need to be converted into its own body map before we can go further.
+
+## Data processing
+Separate the data into male and female data frames.
+
+```{r mf_split}
+male_data <- validation[validation[['gender']] == "Male", ]
+female_data <- validation[validation[['gender']] == "Female", ]
+```
+
+Create a list of body map data frames for the men and women by using the `string_to_map()` function and R's `lapply()`. Then use `agg_choirbm_list()` to reduce the list of data frames through addition of the endorsement values. Since we want the percent endorsement for plotting, we can then calculate the percentage as a separate column in the final data frame.
+
+```{r data_proc_m}
+male_bodymap_list <- lapply(male_data[["bodymap_regions_csv"]], string_to_map)
+male_bodymap_df <- agg_choirbm_list(male_bodymap_list)
+
+# we want to visualize the percent endorsement, so divide the values by 
+# the size of the data set and multiply by 100
+male_bodymap_df[['perc']] <- male_bodymap_df[['value']]/nrow(male_data)*100
+head(male_bodymap_df)
+```
+
+```{r data_proc_f}
+female_bodymap_list <- lapply(female_data[["bodymap_regions_csv"]], string_to_map)
+
+female_bodymap_df <- agg_choirbm_list(female_bodymap_list)
+
+# we want to visualize the percent endorsement, so divide the values by 
+# the size of the data set and multiply by 100
+female_bodymap_df[['perc']] <- female_bodymap_df[['value']]/nrow(female_data)*100
+head(female_bodymap_df)
+```
+
+## Plotting
+Once the data is properly formatted, and the values to plot are calculated, then we can generate some CBMs. Plot the male and female body maps separately.
+
+```{r plot_m_cbm}
+plot_male_choirbm(male_bodymap_df, value = "perc") + 
+  theme(legend.position = "bottom") + 
+  labs(fill = "Percent Endorsement")
+```
+
+```{r plot_f_cbm}
+plot_female_choirbm(female_bodymap_df, value = "perc") +
+  theme(legend.position = "bottom") + 
+  labs(fill = "Percent Endorsement")
+```
