@@ -1,6 +1,6 @@
 Package: CHOIRBM
 Title: Plots the CHOIR Body Map
-Version: 0.0.2
+Version: 0.0.2.9000
 Authors@R: 
     c(person(given = "Eric",
              family = "Cramer",
