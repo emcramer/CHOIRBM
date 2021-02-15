@@ -1,5 +1,10 @@
 # CHOIRBM (development version)
 
+* Added `agg_choirbm_list()` for reducing lists of CBMs by addition. 
+* Added matching test for `agg_choirbm_list()`.
+
+---
+
 # CHOIRBM 0.0.2
 
 * Fixed a url in the README which was broken.

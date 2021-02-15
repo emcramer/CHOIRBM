@@ -20,14 +20,14 @@ Sample of the CBM in clinical use:
 
 ## Installation
 
-~~You can install the released version of CHOIRBM from
-[CRAN](https://CRAN.R-project.org) with:~~ (Not on CRAN…yet)
+You can install the released version of CHOIRBM from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("CHOIRBM")
 ```
 
-Or install from GitHub with:
+Or install the development version from GitHub with:
 
 ``` r
 devtools::install_github("emcramer/CHOIRBM")
