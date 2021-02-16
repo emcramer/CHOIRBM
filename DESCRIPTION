@@ -20,7 +20,8 @@ Depends:
 Imports: 
     ggplot2,
     rlang,
-    stringr
+    stringr,
+    broom
 Suggests: 
     knitr,
     rmarkdown,
