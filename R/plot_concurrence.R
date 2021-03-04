@@ -24,7 +24,7 @@
 #' }
 plot_concurrence <- function(con_mat, ...) {
   p <- ggplot(con_mat) +
-    aes(Var1, Var2, fill = .data[['concurrence']]) +
+    aes(Var1, Var2, fill = .data[["concurrence"]]) +
     geom_tile(color = "white") +
     labs(x = ""
          , y = ""

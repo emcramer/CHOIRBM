@@ -18,10 +18,10 @@
 agg_choirbm_list <- function(cbm_list) {
   map_df <- data.frame(
     cbm_list[[1]][1]
-    , Reduce(`+`, lapply(cbm_list, `[`, 'value'))
+    , Reduce(`+`, lapply(cbm_list, `[`, "value"))
   )
-  map_df[['group']] <- factor(
-    ifelse(as.numeric(map_df[['id']]) < 200, "Front", "Back")
+  map_df[["group"]] <- factor(
+    ifelse(as.numeric(map_df[["id"]]) < 200, "Front", "Back")
     , levels = c("Front", "Back"))
   return(map_df)
 }

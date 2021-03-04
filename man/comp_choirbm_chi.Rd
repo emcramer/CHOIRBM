@@ -22,10 +22,14 @@ Compare CBM segment endorsement across categorical variable using Chi-Square
 data(validation)
 # split male and female data
 male_data <- validation[validation[['gender']] == "Male", ]
-male_bodymap_list <- lapply(male_data[["bodymap_regions_csv"]], string_to_map)
+male_bodymap_list <- lapply(
+ male_data[["bodymap_regions_csv"]]
+ , string_to_map)
 male_bodymap_df <- agg_choirbm_list(male_bodymap_list)
 female_data <- validation[validation[['gender']] == "Female", ]
-female_bodymap_list <- lapply(female_data[["bodymap_regions_csv"]], string_to_map)
+female_bodymap_list <- lapply(
+ female_data[["bodymap_regions_csv"]]
+ , string_to_map)
 female_bodymap_df <- agg_choirbm_list(female_bodymap_list)
 # compare with chi square test
 chi_res <- comp_choirbm_chi(

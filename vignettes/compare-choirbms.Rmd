@@ -38,13 +38,16 @@ Separate the data set into male and female groups before processing to get a sin
 
 ```{r proc_data}
 # isolate and process male data
-male_data <- validation[validation[['gender']] == "Male", ]
+male_data <- validation[validation[["gender"]] == "Male", ]
 male_bodymap_list <- lapply(male_data[["bodymap_regions_csv"]], string_to_map)
 male_bodymap_df <- agg_choirbm_list(male_bodymap_list)
 
 # isolate and process female data
-female_data <- validation[validation[['gender']] == "Female", ]
-female_bodymap_list <- lapply(female_data[["bodymap_regions_csv"]], string_to_map)
+female_data <- validation[validation[["gender"]] == "Female", ]
+female_bodymap_list <- lapply(
+  female_data[["bodymap_regions_csv"]]
+  , string_to_map
+  )
 female_bodymap_df <- agg_choirbm_list(female_bodymap_list)
 
 # quick snapshot of each
@@ -60,7 +63,7 @@ Now use the `comp_choirbm_chi()` function to compare the percent endorsement of 
 # name each data frame in the list as male or female
 chi_res <- comp_choirbm_chi(
   list("male" = male_bodymap_df, "female" = female_bodymap_df)
-  , method = 'bonferroni'
+  , method = "bonferroni"
 )
 
 # visualize the chi-square results
@@ -73,7 +76,14 @@ In this example, we use the `comp_choirbm_glm()` function to see if the continuo
 ```{r comp_glm}
 # for the sake of speed, randomly sample 100 maps...
 set.seed(123)
-sampled_data <- validation[sample(1:nrow(validation), 100, replace = FALSE), ]
+sampled_data <- validation[
+  sample(
+    seq_len(nrow(validation))
+    , 100
+    , replace = FALSE
+  )
+  , ]
+colnames(sampled_data)[5] <- "bodymap"
 model_output <- comp_choirbm_glm(sampled_data, "age", family = "binomial")
 head(model_output)
 ```

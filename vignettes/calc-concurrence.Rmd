@@ -1,0 +1,52 @@
+---
+title: "Calculate the concurrence between different locations on the CHOIR Body Map"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{calc-concurrence}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+options(rmarkdown.html_vignette.check_title = FALSE)
+```
+
+```{r setup}
+library(CHOIRBM)
+```
+
+## Defining "concurrence"
+Concurrence is the number of times two locations on the CBM are endorsed together by patients in a data set. For example, take two patients where one endorses the locations numbered "101, 102, 103, 104, 201, 202" and the other indicates "101, 102, 201, 202." In this case, the location coded "101" co-occurs with "103" and "104" once, but with "102", "201", and "202" twice. This is helpful to calculate, for example, because we can use this for CBMs across different conditions to determine if certain pain locations are more commonly endorsed together due to a particular pathology.
+
+## Workflow
+In this vignette, we will go over calculating and visualizing the concurrence matrix for a randomly sampled portion of the validation data distributed with the CHOIRBM package.
+
+```{r}
+data(validation)
+set.seed(123)
+sampled_data <- validation[
+  sample(
+    seq_len(nrow(validation))
+    , 100
+    , replace = FALSE
+  )
+  , ]
+```
+
+We will then use the `comp_concurrence()` function to calculate the co-occurrence of each location on the CBM. For the purposes of generalizability, the function requires the column of data containing a patient's CBM to be in a string-delimited form and with the column name "bodymap."
+
+```{r} 
+colnames(sampled_data)[5] <- "bodymap" # name the body map column 'bodymap'
+con_mat <- comp_concurrence(sampled_data)
+head(con_mat)
+```
+
+As we can see, the concurrence matrix is in a "long" form, where each row is one pairing of CBM locations and the number of times they occur together in the data set. The function's output is formatted this way for the sake of plotting with the `plot_concurrence()` function.
+
+```{r fig.width=8, fig.height=8}
+plot_concurrence(con_mat = con_mat)
+```

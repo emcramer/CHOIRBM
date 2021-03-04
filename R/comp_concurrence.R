@@ -21,7 +21,7 @@
 #' }
 comp_concurrence <- function(df) {
   # check to make sure the column is named correctly
-  if(!"bodymap" %in% colnames(df)) {
+  if (!"bodymap" %in% colnames(df)) {
     print("Please rename the body map column to 'bodymap.'")
     return(NULL)
   }
@@ -32,7 +32,7 @@ comp_concurrence <- function(df) {
     )
 
   loc_list <- lapply(
-    df[['bodymap']]
+    df[["bodymap"]]
     , string_to_map
     )
 
@@ -41,11 +41,11 @@ comp_concurrence <- function(df) {
   loc_full <- do.call(
     rbind
     , lapply(loc_list, function(x) {
-      present <- subset(x, x[['value']] > 0)
+      present <- subset(x, x[["value"]] > 0)
       concur <- subset(
         expand.grid(
-          present[['id']]
-          , present[['id']]
+          present[["id"]]
+          , present[["id"]]
         )
         , Var1 != Var2
       )
@@ -71,4 +71,3 @@ comp_concurrence <- function(df) {
   final_df[is.na(final_df)] <- 0
   return(final_df)
 }
-

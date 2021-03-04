@@ -4,7 +4,7 @@
 \alias{comp_choirbm_glm}
 \title{Examine the effect of a continuous variable on CBM location endorsement}
 \usage{
-comp_choirbm_glm(in_df, comp_var, ...)
+comp_choirbm_glm(in_df, comp_var, method = "bonferroni", ...)
 }
 \arguments{
 \item{in_df}{a data.frame with at least one column for the CBM as a

@@ -19,7 +19,7 @@ test_that("agg_choirbm_list yields valid cbm", {
    samp_cbm_list <- lapply(samp_proc_df[["regions_csv"]], string_to_map)
 
   # generate body map df from string
-  test_df <-agg_choirbm_list(samp_cbm_list)
+  test_df <- agg_choirbm_list(samp_cbm_list)
 
   # test each column for equality
   expect_equal(test_df[["id"]], true_df[["id"]])

@@ -25,7 +25,6 @@ Start with the string representation of a patient's CBM. When it is converted to
 
 ```{r setup}
 library(CHOIRBM)
-
 cbm_str <- "101,102,103,104"
 cbm_df <- string_to_map(cbm_str)
 head(cbm_df)

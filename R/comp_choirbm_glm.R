@@ -22,9 +22,9 @@
 #' model_ouput <- comp_choirbm_glm(sampled_data, "age")
 #' }
 #'
-comp_choirbm_glm <- function(in_df, comp_var, ...) {
+comp_choirbm_glm <- function(in_df, comp_var, method = "bonferroni", ...) {
   cbm_list <- lapply(
-    in_df[["bodymap_regions_csv"]]
+    in_df[["bodymap"]]
     , string_to_map
   )
   cbm_list <- mapply(
@@ -37,8 +37,8 @@ comp_choirbm_glm <- function(in_df, comp_var, ...) {
 
   full_data <- do.call(rbind, cbm_list)
   segments <- lapply(
-    unique(full_data[['id']])
-    , function(x) subset(full_data, full_data[['id']] == x)
+    unique(full_data[["id"]])
+    , function(x) subset(full_data, full_data[["id"]] == x)
     )
   models_list <- lapply(
     segments
@@ -51,7 +51,7 @@ comp_choirbm_glm <- function(in_df, comp_var, ...) {
     )
   )
   models_df <- cbind(
-    "id" = unique(full_data[['id']])
+    "id" = unique(full_data[["id"]])
     , subset(
       do.call(
         rbind
@@ -60,6 +60,10 @@ comp_choirbm_glm <- function(in_df, comp_var, ...) {
       , term == comp_var
     )
   )
+  models_df[["p.value"]] <- p.adjust(
+    models_df[["p.value"]]
+    , method = method
+    )
 
   # return the
   return(models_df)

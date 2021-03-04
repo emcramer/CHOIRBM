@@ -13,10 +13,14 @@
 #' data(validation)
 #' # split male and female data
 #' male_data <- validation[validation[['gender']] == "Male", ]
-#' male_bodymap_list <- lapply(male_data[["bodymap_regions_csv"]], string_to_map)
+#' male_bodymap_list <- lapply(
+#'  male_data[["bodymap_regions_csv"]]
+#'  , string_to_map)
 #' male_bodymap_df <- agg_choirbm_list(male_bodymap_list)
 #' female_data <- validation[validation[['gender']] == "Female", ]
-#' female_bodymap_list <- lapply(female_data[["bodymap_regions_csv"]], string_to_map)
+#' female_bodymap_list <- lapply(
+#'  female_data[["bodymap_regions_csv"]]
+#'  , string_to_map)
 #' female_bodymap_df <- agg_choirbm_list(female_bodymap_list)
 #' # compare with chi square test
 #' chi_res <- comp_choirbm_chi(
@@ -32,11 +36,11 @@ comp_choirbm_chi <- function(cbm_list, ...) {
   cbm_names <- names(cbm_list)
 
   # get total endorsement and percent by gender
-  total_value <- Reduce(`+`, lapply(cbm_list, `[`, 'value'))[ ,1]
+  total_value <- Reduce(`+`, lapply(cbm_list, `[`, "value"))[, 1]
 
   perc_values <- do.call(
     cbind
-    , lapply(cbm_list, function(x) x[['value']]/total_value)
+    , lapply(cbm_list, function(x) x[["value"]] / total_value)
   )
   names(perc_values) <- cbm_names
 
@@ -46,15 +50,15 @@ comp_choirbm_chi <- function(cbm_list, ...) {
     , 1
     , function(x) chisq.test(
       x
-      , p = rep(1/n_groups, n_groups)
+      , p = rep(1 / n_groups, n_groups)
       , simulate.p.value = TRUE)
   )
 
   chisumry <- function(x) {
     data.frame(
-      "p.value" = x[['p.value']]
-      , "statistic" = x[['statistic']]
-      , "parameter" = x[['parameter']]
+      "p.value" = x[["p.value"]]
+      , "statistic" = x[["statistic"]]
+      , "parameter" = x[["parameter"]]
       , row.names = NULL
     )
   }
@@ -67,7 +71,7 @@ comp_choirbm_chi <- function(cbm_list, ...) {
     c(seq.int(101, 136, 1)
       , seq.int(201, 238, 1))
   )
-  x2_df[['p.value']] <- p.adjust(x2_df[['p.value']], ...)
+  x2_df[["p.value"]] <- p.adjust(x2_df[["p.value"]], ...)
 
   # return the final data frame
   return(x2_df)

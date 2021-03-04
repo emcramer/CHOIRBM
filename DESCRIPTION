@@ -18,10 +18,10 @@ BugReports: https://github.com/emcramer/CHOIRBM/issues
 Depends: 
     R (>= 3.5.0)
 Imports: 
+    broom,
     ggplot2,
     rlang,
-    stringr,
-    broom
+    stringr
 Suggests: 
     knitr,
     rmarkdown,
