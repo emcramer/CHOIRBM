@@ -22,9 +22,16 @@ an ID appeared. Useful for plotting an individual's CHOIR BM or for
 isolating particular sections to highlight.
 }
 \examples{
+# from a choir database
 cbm_str <- "101,102,103,104,201,202"
 cbm_df <- string_to_map(cbm_str)
-#plot in a male or female bodymap...
+# plot in a male or female bodymap...
+plot_male_choirbm(cbm_df, "value")
+
+# from a REDCap project
+cbm_str <- "b07,b18,b19,b23,b24,b28,b33,f01,f03,f08,f17,f27,f29"
+cbm_df <- string_to_map(cbm_str)
+# plot in a male or female bodymap...
 plot_male_choirbm(cbm_df, "value")
 
 }
