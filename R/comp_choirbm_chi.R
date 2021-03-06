@@ -35,7 +35,7 @@ comp_choirbm_chi <- function(cbm_list, ...) {
   n_groups <- length(cbm_list)
   cbm_names <- names(cbm_list)
 
-  # get total endorsement and percent by gender
+  # get total endorsement and percent
   total_value <- Reduce(`+`, lapply(cbm_list, `[`, "value"))[, 1]
 
   perc_values <- do.call(

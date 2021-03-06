@@ -47,7 +47,7 @@ female_data <- validation[validation[["gender"]] == "Female", ]
 female_bodymap_list <- lapply(
   female_data[["bodymap_regions_csv"]]
   , string_to_map
-  )
+)
 female_bodymap_df <- agg_choirbm_list(female_bodymap_list)
 
 # quick snapshot of each
@@ -70,7 +70,15 @@ chi_res <- comp_choirbm_chi(
 head(chi_res)
 ```
 
-### Example 2: Logistic regression method
+### Example 2: z-test method
+The `comp_choirbm_ztest()` function uses a two-proportions z-test to compare observed proportions from two different groups.
+
+
+```{r ztest}
+comp_choirbm_ztest(male_data, female_data, tail = "two")
+```
+
+### Example 3: Logistic regression method
 In this example, we use the `comp_choirbm_glm()` function to see if the continuous age variable in the validation data is related to whether or not an individual endorses a particular location on the body map using logistic regression. `comp_choirbm_glm()` accepts a data frame with a "bodymap_regions_csv" column and another column with the variable of interest. It returns a data.frame where each row is the result of one logistic regression using the continuous variable to predict CBM location endorsement.
 
 ```{r comp_glm}
