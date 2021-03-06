@@ -12,11 +12,11 @@
 comp_choirbm_ztest <- function(df1, df2, tail = "two", p.method = "bonferroni") {
   # df prep
   proc_df1 <- agg_choirbm_list(
-    lapply(df1[["bodymap_regions_csv"]]
+    lapply(df1[["bodymap"]]
            , string_to_map)
   )
   proc_df2 <- agg_choirbm_list(
-    lapply(df2[["bodymap_regions_csv"]]
+    lapply(df2[["bodymap"]]
            , string_to_map)
   )
   ovr <- proc_df1[["value"]] + proc_df2[["value"]]
