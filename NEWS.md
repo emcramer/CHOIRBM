@@ -1,5 +1,14 @@
 # CHOIRBM (development version)
 
+* Added functions to fix difference between male and female numbering schemes:
+  * `prep_bodymaps()`
+  * `convert_bodymap()`
+  * `convert_bodymaps()`
+
+---
+
+# CHOIRBM 0.0.3
+
 * Added `agg_choirbm_list()` for reducing lists of CBMs by addition. 
 * Added matching test for `agg_choirbm_list()`.
 

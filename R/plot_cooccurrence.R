@@ -19,16 +19,16 @@
 #' \dontrun{
 #' set.seed(123)
 #' sampled_data <- validation[sample(1:nrow(validation), 100, replace = FALSE),]
-#' con_mat <- comp_concurrence(sampled_data)
-#' plot_concurrence(con_mat)
+#' con_mat <- comp_cooccurrence(sampled_data)
+#' plot_cooccurrence(con_mat)
 #' }
-plot_concurrence <- function(con_mat, ...) {
+plot_cooccurrence <- function(con_mat, ...) {
   p <- ggplot(con_mat) +
-    aes(Var1, Var2, fill = .data[["concurrence"]]) +
+    aes(Var1, Var2, fill = .data[["cooccurrence"]]) +
     geom_tile(color = "white") +
     labs(x = ""
          , y = ""
-         , fill = "Concurrence") +
+         , fill = "Co-occurrence") +
     theme_minimal() +
     theme(
       panel.grid = element_blank()

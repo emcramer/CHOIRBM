@@ -1,6 +1,8 @@
 #' Compare CBM segment endorsement across categorical variable using z-test(s)
 #'
 #' @param cbm_list a named list of CBMs
+#' @param tail whether to do a single or two tailed z test
+#' @param p.method the method for p-value corrections
 #' @param ... additional parameters passed to p.adjust()
 #'
 #' @return a data frame with the p-values and z statistic
@@ -9,14 +11,23 @@
 #' @importFrom stats pnorm p.adjust
 #'
 #' @examples
-comp_choirbm_ztest <- function(df1, df2, tail = "two", p.method = "bonferroni") {
+#' library(CHOIRBM)
+#' # isolate and process male data
+#' male_data <- validation[validation[["gender"]] == "Male", ]
+#' # isolate and process female data
+#' female_data <- validation[validation[["gender"]] == "Female", ]
+#' comp_choirbm_ztest(list( "male" = male_data, "female" = female_data), tail = "two")
+comp_choirbm_ztest <- function(cbm_list, tail = "two",
+                               p.method = "bonferroni") {
   # df prep
+  df1 <- cbm_list[[1]]
+  df2 <- cbm_list[[2]]
   proc_df1 <- agg_choirbm_list(
-    lapply(df1[["bodymap"]]
+    lapply(df1[[colnames(df1)[grepl("bodymap|cbm", colnames(df1))]]]
            , string_to_map)
   )
   proc_df2 <- agg_choirbm_list(
-    lapply(df2[["bodymap"]]
+    lapply(df2[[colnames(df2)[grepl("bodymap|cbm", colnames(df2))]]]
            , string_to_map)
   )
   ovr <- proc_df1[["value"]] + proc_df2[["value"]]

@@ -1,0 +1,58 @@
+---
+title: "Convert CBMs to Standard"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Convert CBMs to Standard}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The CHOIR Body Map does not use the same numbering scheme for male and female
+body maps (as of August 2021). 
+
+<!--![Incorrectly labeled bodymaps](img/mislabeled-bodymaps.png)-->
+```{r load_img}
+# mislabeled_cbm_img <- function() {
+#   # magick::image_read(system.file("img/mislabeled-bodymaps.png", "CHOIRBM"))
+#   filename <- "img/mislabeled-bodymaps.png"
+#   system.file(filename, package = "CHOIRBM", lib.loc = .libPaths()[1])
+# }
+# knitr::include_graphics("inst/img/mislabeled-bodymaps.png")
+```
+
+Therefore, for mixed gender analysis (such as 
+examining differences in segment endorsements between men and women), it is 
+necessary to convert maps to the same standard. This vignette demonstrates how
+to re-number the female body map to the male numbering scheme.
+
+```{r setup}
+library(CHOIRBM)
+```
+
+```{r example}
+## basic example code
+# generate example data <- don't do this if you have data already, load it 
+# into R with read.csv, read.delim, etc.
+GENDER = as.character(c("Male", "Female", "Female"))
+BODYMAP_CSV = as.character(c("112,125","112,113","128,117"))
+cbind(GENDER, BODYMAP_CSV)
+
+# convert the female bodymaps to a standard
+BODYMAP_CSV[GENDER == "Female"] <- convert_bodymaps(
+  BODYMAP_CSV[GENDER == "Female"]
+  )
+sampledata <- data.frame(GENDER, BODYMAP_CSV)
+sampledata
+```
+
+To save your fixed data, run:
+```{r example2, eval=FALSE}
+write.csv(sampledata, "filepath/filename.csv")
+```

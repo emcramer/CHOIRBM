@@ -4,10 +4,12 @@
 \alias{comp_choirbm_ztest}
 \title{Compare CBM segment endorsement across categorical variable using z-test(s)}
 \usage{
-comp_choirbm_ztest(df1, df2, tail = "two", p.method = "bonferroni")
+comp_choirbm_ztest(cbm_list, tail = "two", p.method = "bonferroni")
 }
 \arguments{
 \item{cbm_list}{a named list of CBMs}
+
+\item{tail}{whether to do a single or two tailed z test}
 
 \item{...}{additional parameters passed to p.adjust()}
 }
@@ -16,4 +18,12 @@ a data frame with the p-values and z statistic
 }
 \description{
 Compare CBM segment endorsement across categorical variable using z-test(s)
+}
+\examples{
+library(CHOIRBM)
+# isolate and process male data
+male_data <- validation[validation[["gender"]] == "Male", ]
+# isolate and process female data
+female_data <- validation[validation[["gender"]] == "Female", ]
+comp_choirbm_ztest(list( "male" = male_data, "female" = female_data), tail = "two")
 }

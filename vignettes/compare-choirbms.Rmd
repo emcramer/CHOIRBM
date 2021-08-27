@@ -75,7 +75,7 @@ The `comp_choirbm_ztest()` function uses a two-proportions z-test to compare obs
 
 
 ```{r ztest}
-comp_choirbm_ztest(male_data, female_data, tail = "two")
+comp_choirbm_ztest(list( "male" = male_data, "female" = female_data), tail = "two")
 ```
 
 ### Example 3: Logistic regression method

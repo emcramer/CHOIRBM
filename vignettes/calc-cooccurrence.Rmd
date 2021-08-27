@@ -1,5 +1,5 @@
 ---
-title: "Calculate the concurrence between different locations on the CHOIR Body Map"
+title: "Calculate the co-occurrence between different locations on the CHOIR Body Map"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{calc-concurrence}
@@ -19,7 +19,7 @@ options(rmarkdown.html_vignette.check_title = FALSE)
 library(CHOIRBM)
 ```
 
-## Defining "concurrence"
+## Defining "co-occurrence"
 Concurrence is the number of times two locations on the CBM are endorsed together by patients in a data set. For example, take two patients where one endorses the locations numbered "101, 102, 103, 104, 201, 202" and the other indicates "101, 102, 201, 202." In this case, the location coded "101" co-occurs with "103" and "104" once, but with "102", "201", and "202" twice. This is helpful to calculate, for example, because we can use this for CBMs across different conditions to determine if certain pain locations are more commonly endorsed together due to a particular pathology.
 
 ## Workflow
@@ -41,12 +41,12 @@ We will then use the `comp_concurrence()` function to calculate the co-occurrenc
 
 ```{r} 
 colnames(sampled_data)[5] <- "bodymap" # name the body map column 'bodymap'
-con_mat <- comp_concurrence(sampled_data)
+con_mat <- comp_cooccurrence(sampled_data)
 head(con_mat)
 ```
 
 As we can see, the concurrence matrix is in a "long" form, where each row is one pairing of CBM locations and the number of times they occur together in the data set. The function's output is formatted this way for the sake of plotting with the `plot_concurrence()` function.
 
 ```{r fig.width=8, fig.height=8}
-plot_concurrence(con_mat = con_mat)
+plot_cooccurrence(con_mat = con_mat)
 ```

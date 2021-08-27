@@ -3,7 +3,8 @@
 #' @param in_df a data.frame with at least one column for the CBM as a
 #' delimited string, and another column as the continuous variable for
 #' modeling.
-#' @param comp_var the name of the variable to model as a string.
+#' @param comp_var the name of the variable to model as a string
+#' @param method the method for p-value corrections
 #' @param ... additional parameters passed to glm.
 #'
 #' @return a data.frame with the following columns: id, term, estimate,
