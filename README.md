@@ -32,6 +32,9 @@ Or install the development version from GitHub with:
 ``` r
 devtools::install_github("emcramer/CHOIRBM")
 remotes::install_github("emcramer/CHOIRBM")
+
+# recommended to build the vignettes, if possible
+remotes::install_github("emcramer/CHOIRBM", build_vignettes = TRUE, force = TRUE)
 ```
 
 ## Examples
