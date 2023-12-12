@@ -88,6 +88,8 @@ patients, highlighting specific segments, and changing color schemes.
 
 ## Citations:
 
+If you use `CHOIRBM` in your work, please cite:
+
 >Cramer E, Ziadni M, Scherrer KH, Mackey S, Kao MC (2022) CHOIRBM: An R package for exploratory data analysis and interactive visualization of pain patient body map data. PLOS Computational Biology 18(10): e1010496. https://doi.org/10.1371/journal.pcbi.1010496
 
 > Scherrer, Kristen Hymel; Ziadni, Maisa S; Kong, Jiang-Tia; Sturgeon,
