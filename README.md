@@ -4,6 +4,7 @@
 # CHOIRBM
 
 <!-- badges: start -->
+[![DOI](https://zenodo.org/badge/329775974.svg)](https://doi.org/10.5281/zenodo.15850518)
 <!-- badges: end -->
 
 CHOIRBM is a collection of plotting utilities for the [Collaborative
