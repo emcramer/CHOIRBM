@@ -6,9 +6,7 @@
 \alias{CHOIRBM-package}
 \title{CHOIRBM: Plots the CHOIR Body Map}
 \description{
-Collection of utility functions for visualizing
-    body map data collected with the Collaborative Health Outcomes
-    Information Registry.
+Collection of utility functions for visualizing body map data collected with the Collaborative Health Outcomes Information Registry.
 }
 \seealso{
 Useful links:
@@ -19,7 +17,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Eric Cramer \email{emcramer@stanford.edu} (\href{https://orcid.org/0000-0003-2085-3679}{ORCID})
+\strong{Maintainer}: Eric Cramer \email{dev.emc503@gmail.com} (\href{https://orcid.org/0000-0003-2085-3679}{ORCID})
 
 Other contributors:
 \itemize{

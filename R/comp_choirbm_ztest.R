@@ -3,7 +3,6 @@
 #' @param cbm_list a named list of CBMs
 #' @param tail whether to do a single or two tailed z test
 #' @param p.method the method for p-value corrections
-#' @param ... additional parameters passed to p.adjust()
 #'
 #' @return a data frame with the p-values and z statistic
 #' @export

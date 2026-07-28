@@ -11,7 +11,7 @@ comp_choirbm_ztest(cbm_list, tail = "two", p.method = "bonferroni")
 
 \item{tail}{whether to do a single or two tailed z test}
 
-\item{...}{additional parameters passed to p.adjust()}
+\item{p.method}{the method for p-value corrections}
 }
 \value{
 a data frame with the p-values and z statistic

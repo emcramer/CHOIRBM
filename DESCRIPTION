@@ -5,7 +5,7 @@ Authors@R:
     c(person(given = "Eric",
              family = "Cramer",
              role = c("aut", "cre"),
-             email = "emcramer@stanford.edu",
+             email = "dev.emc503@gmail.com",
              comment = c(ORCID = "0000-0003-2085-3679")),
       person(given = "Stanford University School of Medicine",
              role = c("cph", "fnd")))
@@ -32,4 +32,4 @@ Config/testthat/edition: 2
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.3

@@ -11,7 +11,9 @@ comp_choirbm_glm(in_df, comp_var, method = "bonferroni", ...)
 delimited string, and another column as the continuous variable for
 modeling.}
 
-\item{comp_var}{the name of the variable to model as a string.}
+\item{comp_var}{the name of the variable to model as a string}
+
+\item{method}{the method for p-value corrections}
 
 \item{...}{additional parameters passed to glm.}
 }
