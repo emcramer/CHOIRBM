@@ -5,6 +5,11 @@ CRAN (Kurt Hornik) because mail to the previous address
 (emcramer@stanford.edu) was bouncing. See
 https://github.com/emcramer/CHOIRBM/issues/5.
 
+The version has been bumped to 0.0.3. The previous upload used the
+development version 0.0.2.9000, which the incoming auto-check flagged with
+"Version contains large components"; this release uses a standard
+three-component version instead.
+
 The maintainer address in DESCRIPTION is now:
 
     Eric Cramer <dev.emc503@gmail.com>
