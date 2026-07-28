@@ -1,49 +1,39 @@
-## Resubmission notes
-Addressing the following feedback:  
+## Resubmission
 
-"Found the following (possibly) invalid URLs:
-     URL: http://www.choir.stanford.edu
-       From: README.md
-       Status: Error
-       Message: libcurl error code 6:
-                Could not resolve host: www.choir.stanford.edu
-Well, there is:
-https://choir.stanford.edu/
-Please fix and resubmit."
+This resubmission updates the maintainer email address, as requested by
+CRAN (Kurt Hornik) because mail to the previous address
+(emcramer@stanford.edu) was bouncing. See
+https://github.com/emcramer/CHOIRBM/issues/5.
 
-I changed the http to https in the CHOIR url and the host resolves now with R CMD check and on rhub.
+The maintainer address in DESCRIPTION is now:
 
-Copying and pasting the results from `rhub::check_for_cran()` below.
+    Eric Cramer <dev.emc503@gmail.com>
 
-For a CRAN submission we recommend that you fix all NOTEs, WARNINGs and ERRORs.
+I no longer have access to the previous emcramer@stanford.edu address and
+am therefore unable to send the usual confirmation from it. I have emailed
+CRAN separately to explain this and to offer alternative verification of
+my identity as maintainer (GitHub repository and ORCID).
 
-### Test environments
-- R-hub windows-x86_64-devel (r-devel)
-- R-hub ubuntu-gcc-release (r-release)
-- R-hub fedora-clang-devel (r-devel)
-
-### R CMD check results
-On windows-x86_64-devel (r-devel), ubuntu-gcc-release (r-release), fedora-clang-devel (r-devel)  
-  checking CRAN incoming feasibility ... NOTE
-  Maintainer: 'Eric Cramer <emcramer@stanford.edu>'
-  
-  New submission  
-  
-  0 errors √ | 0 warnings √ | 1 note x  
-
-This note is from re-submitting a new package.
-
-## Initial submission notes
-This is a new package that makes it easier for researchers to visualize and analyze
-human body map data using the [CHOIR Body Map](https://journals.lww.com/10.1097/PR9.0000000000000880) (an instrument for recording the anatomical location of patients' pain).
+Aside from the maintainer email, the only other change is documentation:
+the man/*.Rd files were regenerated with roxygen2 so that all function
+arguments are documented (fixing the previously undocumented `method` and
+`p.method` arguments). There are no changes to package functionality.
 
 ## Test environments
-* local R installation, R 4.0.3
-* ubuntu 16.04 (on travis-ci), R 4.0.3
-* win-builder (devel)
+* local macOS (aarch64-apple-darwin20), R 4.4.3
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 2 notes
 
-* This is a new release.
+* checking CRAN incoming feasibility ... NOTE
+  New maintainer:
+    Eric Cramer <dev.emc503@gmail.com>
+  Old maintainer(s):
+    Eric Cramer <emcramer@stanford.edu>
+  This is the intended maintainer email change described above.
+
+* checking for future file timestamps ... NOTE
+  unable to verify current time
+  This note is environmental (the check host could not reach the time
+  server) and is unrelated to the package.
