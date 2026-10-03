@@ -26,7 +26,7 @@ plot_female_choirbm <- function(df, value) {
         , group = .data[["id"]]
         )
       , color = "black"
-      , size = 1.5
+      , linewidth = 1.5
       ) +
     scale_y_reverse() +
     facet_wrap(~.data[["group"]]) +

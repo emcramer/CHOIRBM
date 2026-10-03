@@ -1,6 +1,8 @@
 # CHOIRBM (development version)
 
 * Added GitHub Actions CI (R CMD check, coverage, pkgdown) and contributor docs.
+* Fixed `comp_choirbm_chi()` erroring when a segment was endorsed by no group; those segments now return `NA`.
+* Replaced deprecated `size` with `linewidth` in the body map plots (requires ggplot2 >= 3.4.0).
 * Added tests for `convert_bodymap()`, `convert_bodymaps()`, `prep_bodymaps()`, `comp_choirbm_chi()` and `num_areas()`; moved to testthat edition 3.
 
 ---

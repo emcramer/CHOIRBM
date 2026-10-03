@@ -3,7 +3,8 @@
 #' @param cbm_list a named list of CBMs
 #' @param ... additional parameters passed to p.adjust()
 #'
-#' @return a data frame with the p-values, chi statistic, and degrees of freedom
+#' @return a data frame with the p-values, chi statistic, and degrees of freedom.
+#' Segments endorsed by none of the groups have `NA` for all three columns.
 #' @export
 #'
 #' @importFrom stats chisq.test p.adjust
@@ -48,10 +49,17 @@ comp_choirbm_chi <- function(cbm_list, ...) {
   x2_res <- apply(
     perc_values
     , 1
-    , function(x) chisq.test(
-      x
-      , p = rep(1 / n_groups, n_groups)
-      , simulate.p.value = TRUE)
+    , function(x) {
+      # segments endorsed by no group have an undefined (0/0) share; report NA
+      if (anyNA(x)) {
+        return(list(p.value = NA_real_, statistic = NA_real_
+                    , parameter = NA_real_))
+      }
+      chisq.test(
+        x
+        , p = rep(1 / n_groups, n_groups)
+        , simulate.p.value = TRUE)
+    }
   )
 
   chisumry <- function(x) {
