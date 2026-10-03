@@ -1,3 +1,10 @@
+# CHOIRBM (development version)
+
+* Added GitHub Actions CI (R CMD check, coverage, pkgdown) and contributor docs.
+* Added tests for `convert_bodymap()`, `convert_bodymaps()`, `prep_bodymaps()`, `comp_choirbm_chi()` and `num_areas()`; moved to testthat edition 3.
+
+---
+
 # CHOIRBM 0.0.3
 
 * Updated the maintainer email address.

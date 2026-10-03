@@ -3,6 +3,12 @@
 ^LICENSE\.md$
 ^README\.Rmd$
 ^cran-comments\.md$
-^CRAN-RELEASE$
 ^doc$
 ^Meta$
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^CONTRIBUTING\.md$
+^\.lintr$
+^codecov\.yml$

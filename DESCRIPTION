@@ -1,6 +1,6 @@
 Package: CHOIRBM
 Title: Plots the CHOIR Body Map
-Version: 0.0.3
+Version: 0.0.3.9000
 Authors@R: 
     c(person(given = "Eric",
              family = "Cramer",
@@ -25,10 +25,10 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 2.0.0)
+    testthat (>= 3.0.0)
 VignetteBuilder: 
     knitr
-Config/testthat/edition: 2
+Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

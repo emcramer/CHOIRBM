@@ -1,4 +1,3 @@
-context("String maps equal")
 test_that("string_to_map yields valid map", {
 
   # create a simple body map data frame
