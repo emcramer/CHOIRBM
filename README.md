@@ -4,7 +4,11 @@
 # CHOIRBM
 
 <!-- badges: start -->
+
 [![DOI](https://zenodo.org/badge/329775974.svg)](https://doi.org/10.5281/zenodo.15850518)
+[![R-CMD-check](https://github.com/emcramer/CHOIRBM/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/emcramer/CHOIRBM/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/emcramer/CHOIRBM/graph/badge.svg)](https://app.codecov.io/gh/emcramer/CHOIRBM)
 <!-- badges: end -->
 
 CHOIRBM is a collection of plotting utilities for the [Collaborative
@@ -17,7 +21,7 @@ built on top of the popular R plotting package `ggplot2`, and returns
 plots as ggplot objects.
 
 Sample of the CBM in clinical use:
-<img src="man/figures/cbm-journal.jpeg" width="100%" />
+<img src="man/figures/cbm-journal.jpeg" alt="" width="100%" />
 
 ## Installation
 
@@ -33,9 +37,6 @@ Or install the development version from GitHub with:
 ``` r
 devtools::install_github("emcramer/CHOIRBM")
 remotes::install_github("emcramer/CHOIRBM")
-
-# recommended to build the vignettes, if possible
-remotes::install_github("emcramer/CHOIRBM", build_vignettes = TRUE, force = TRUE)
 ```
 
 ## Examples
@@ -60,16 +61,24 @@ values <- data.frame(
 
 # plot the data on the front of the CHOIR body map
 plot_male_choirbm(values, "value")
+#> Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+#> i Please use `linewidth` instead.
+#> i The deprecated feature was likely used in the CHOIRBM package.
+#>   Please report the issue at <https://github.com/emcramer/CHOIRBM/issues>.
+#> This warning is displayed once per session.
+#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+#> generated.
 ```
 
-<img src="man/figures/README-male_example-1.png" width="100%" />
+<img src="man/figures/README-male_example-1.png" alt="" width="100%" />
 
 ``` r
+
 # plot each segment of the bodymap as a different color
 plot_male_choirbm(values, "ucolors")
 ```
 
-<img src="man/figures/README-male_example-2.png" width="100%" />
+<img src="man/figures/README-male_example-2.png" alt="" width="100%" />
 
 ### Plotting the female CBM
 
@@ -85,16 +94,12 @@ exdata <- gen_example_data()
 plot_female_choirbm(exdata, "value")
 ```
 
-<img src="man/figures/README-female_example-1.png" width="100%" />
+<img src="man/figures/README-female_example-1.png" alt="" width="100%" />
 
 Check the vignettes for more examples such as plotting individual
 patients, highlighting specific segments, and changing color schemes.
 
 ## Citations:
-
-If you use `CHOIRBM` in your work, please cite:
-
->Cramer E, Ziadni M, Scherrer KH, Mackey S, Kao MC (2022) CHOIRBM: An R package for exploratory data analysis and interactive visualization of pain patient body map data. PLOS Computational Biology 18(10): e1010496. https://doi.org/10.1371/journal.pcbi.1010496
 
 > Scherrer, Kristen Hymel; Ziadni, Maisa S; Kong, Jiang-Tia; Sturgeon,
 > John A; Salmasi, Vafia; Hong, Juliette; Cramer, Eric; Chen, Abby L;

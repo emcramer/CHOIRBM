@@ -1,4 +1,3 @@
-context("Collapse CBMs to single df")
 test_that("agg_choirbm_list yields valid cbm", {
   # create a simple body map data frame
   ids <- as.character(c(seq.int(101, 136, 1), seq.int(201, 238, 1)))

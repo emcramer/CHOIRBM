@@ -12,7 +12,8 @@ comp_choirbm_chi(cbm_list, ...)
 \item{...}{additional parameters passed to p.adjust()}
 }
 \value{
-a data frame with the p-values, chi statistic, and degrees of freedom
+a data frame with the p-values, chi statistic, and degrees of freedom.
+Segments endorsed by none of the groups have \code{NA} for all three columns.
 }
 \description{
 Compare CBM segment endorsement across categorical variable using Chi-Square

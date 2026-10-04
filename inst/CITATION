@@ -1,0 +1,9 @@
+bibentry(
+  "Manual",
+  title = "CHOIRBM: Plots the CHOIR Body Map",
+  author = person("Eric", "Cramer", comment = c(ORCID = "0000-0003-2085-3679")),
+  year = format(Sys.Date(), "%Y"),
+  note = paste("R package version", meta$Version),
+  url = "https://github.com/emcramer/CHOIRBM",
+  doi = "10.5281/zenodo.15850518"
+)
